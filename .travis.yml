@@ -17,8 +17,10 @@ install:
   - sudo apt-get install cmake
 
 script:
+  - bii buzz
+
+install:
   - cd IfcPlusPlus
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make
+  - wget http://apt.biicode.com/install.sh && chmod +x install.sh && ./install.sh
+  - bii --version
+  - bii setup:cpp
